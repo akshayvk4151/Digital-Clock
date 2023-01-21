@@ -41,17 +41,17 @@
             background: red;
             width: 50%;
             position: absolute;
-           
+
             top: 38%;
             left: 24%;
             height: 265px;
             border-radius: 18px;
             box-shadow: 12px 12px 22px;
-            
+
         }
 
         .main .display {
-            background:blue;
+            background: blue;
             margin: 16px;
             height: 235px;
             text-align: center;
@@ -69,7 +69,7 @@
             font-weight: 600;
             letter-spacing: 4px;
             transition: all 1.5s ease;
-        
+
         }
 
         .main .display .time:hover {
@@ -81,14 +81,18 @@
 </head>
 
 <body>
-    <h1 class="heading">DIGITAL CLOCK</h1>
-    <div class="main">
+    <div class="container">
+        <h1 class="heading">DIGITAL CLOCK</h1>
+        <div class="main">
 
-        <div class="display">
-            <div id="time" class="time"></div>
+            <div class="display">
+                <div id="time" class="time"></div>
+            </div>
+
         </div>
 
     </div>
+
 
 
 
@@ -99,16 +103,16 @@
             var hh = time.getHours()
             var mm = time.getMinutes()
             var ss = time.getSeconds()
-            var day = 'PM'
-
-            if(hh > 12){
-                hh == 'AM'
-            }
-            
+            var am_or_pm = 'AM'
 
             if (hh > 12) {
-                    hh = hh - 12
-                }
+                am_or_pm == 'PM'
+            }
+
+
+            if (hh > 12) {
+                hh = hh - 12
+            }
 
             if (hh == 0) {
                 hh = 12
@@ -123,11 +127,11 @@
                 ss = '0' + ss
             }
             var time = document.getElementById('time')
-            time.innerHTML = hh + ':' + mm + ':' + ss + ' ' +day
+            time.innerHTML = hh + ':' + mm + ':' + ss + ' ' + am_or_pm
             setTimeout(showTime, 1000)
 
         }
-        
+
 
         showTime()
 
